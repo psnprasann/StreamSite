@@ -115,8 +115,9 @@ def view(url_id):
 
 @app.route("/stream/<url_id>")
 def stream(url_id):
+    f_name = request.args.get("name")
     video_url = f"https://mystreamrobot-7197a26fb59d.herokuapp.com/dl/{url_id}"
-    return render_template("stream.html", video_url=video_url)
+    return render_template("stream.html", video_url=video_url, f_name=f_name)
 
 
 # For A Ads Verification
