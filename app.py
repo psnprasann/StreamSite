@@ -113,9 +113,9 @@ def view(url_id):
         )
 
 
-@app.route("/stream")
-def stream():
-    video_url = request.args.get("url")
+@app.route("/stream/<url_id>")
+def stream(url_id):
+    video_url = f"https://mystreamrobot-7197a26fb59d.herokuapp.com/dl/{url_id}"
     return render_template("stream.html", video_url=video_url)
 
 
